@@ -21,6 +21,9 @@ var scenes;
             //add the eggs to the scene
             this._egg = new objects.Egg();
             this.addChild(this._egg);
+            //add the monster to the scene
+            this._monster = new objects.Monster();
+            this.addChild(this._monster);
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -28,6 +31,7 @@ var scenes;
         Play.prototype.update = function () {
             this._grass.update();
             this._egg.update();
+            this._monster.update();
         };
         return Play;
     }(objects.Scene));
