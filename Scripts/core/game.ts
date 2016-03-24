@@ -23,6 +23,7 @@ var assetData:objects.Asset[] = [
     {id: "plane", src:"../../Assets/images/plane.png"},
     {id: "island", src:"../../Assets/images/island.png"},
     {id: "cloud", src:"../../Assets/images/cloud.png"},
+    {id:"grass", src:"../../Assets/images/grass.png"}
 ];
 
 function preload() {

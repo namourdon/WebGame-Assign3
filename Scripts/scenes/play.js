@@ -15,18 +15,17 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
-            //Add Play Label
-            this._playLabel = new objects.Label("PLAY SCENE", "60px Consolas", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
-            this.addChild(this._playLabel);
+            this._grass = new objects.Grass();
+            this.addChild(this._grass);
             // add this scene to the global stage container
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
+            this._grass.update();
         };
         return Play;
-    }(objects.Scene));
+    })(objects.Scene);
     scenes.Play = Play;
 })(scenes || (scenes = {}));
-
 //# sourceMappingURL=play.js.map

@@ -19,6 +19,7 @@ var assetData = [
     { id: "plane", src: "../../Assets/images/plane.png" },
     { id: "island", src: "../../Assets/images/island.png" },
     { id: "cloud", src: "../../Assets/images/cloud.png" },
+    { id: "grass", src: "../../Assets/images/grass.png" }
 ];
 function preload() {
     assets = new createjs.LoadQueue();
@@ -92,5 +93,4 @@ function changeScene() {
     console.log(currentScene.numChildren);
 }
 window.onload = preload;
-
 //# sourceMappingURL=game.js.map
