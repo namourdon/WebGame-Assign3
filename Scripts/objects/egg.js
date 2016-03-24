@@ -5,34 +5,35 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    //Grass class 
-    var Grass = (function (_super) {
-        __extends(Grass, _super);
+    //Egg class 
+    var Egg = (function (_super) {
+        __extends(Egg, _super);
         //private instance variable
         //constructor
-        function Grass() {
-            _super.call(this, "grass");
+        function Egg() {
+            _super.call(this, "egg");
             this._speed.y = 5; //5 pixel per pixel
-            this._reset(-500);
+            this._reset(-this._height);
         }
         //Private methods
-        Grass.prototype._checkBound = function (value) {
+        Egg.prototype._checkBound = function (value) {
+            //check that the top of the egg has reached outside of the screen
             if (this.y >= value) {
-                this._reset(-500);
+                this._reset(-this._height);
             }
         };
-        Grass.prototype._reset = function (value) {
+        Egg.prototype._reset = function (value) {
             //reset the ocean offscreen
             this.y = value;
         };
-        Grass.prototype.update = function () {
+        Egg.prototype.update = function () {
             //scroll the ocean 5px per frame
             this.y += this._speed.y;
-            this._checkBound(0);
+            this._checkBound(config.Screen.HEIGHT + this._height);
         };
-        return Grass;
+        return Egg;
     }(objects.GameObject));
-    objects.Grass = Grass;
+    objects.Egg = Egg;
 })(objects || (objects = {}));
 
-//# sourceMappingURL=grass.js.map
+//# sourceMappingURL=egg.js.map

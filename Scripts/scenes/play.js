@@ -15,17 +15,23 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
+            //add grass to the scene
             this._grass = new objects.Grass();
             this.addChild(this._grass);
+            //add the eggs to the scene
+            this._egg = new objects.Egg();
+            this.addChild(this._egg);
             // add this scene to the global stage container
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
             this._grass.update();
+            this._egg.update();
         };
         return Play;
-    })(objects.Scene);
+    }(objects.Scene));
     scenes.Play = Play;
 })(scenes || (scenes = {}));
+
 //# sourceMappingURL=play.js.map
