@@ -14,6 +14,10 @@ var objects;
             this._speed = new createjs.Point(0, 0);
             this._width = this.getBounds().width;
             this._height = this.getBounds().height;
+            this._topBounds = this._height;
+            this._bottomBounds = config.Screen.HEIGHT + this._height;
+            this._leftBounds = 0;
+            this._rightBounds = config.Screen.WIDTH - this._width;
         }
         //Private methods
         GameObject.prototype._checkBound = function (value) {

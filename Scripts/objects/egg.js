@@ -13,23 +13,26 @@ var objects;
         function Egg() {
             _super.call(this, "egg");
             this._speed.y = 5; //5 pixel per pixel
-            this._reset(-this._height);
+            this._reset(this._topBounds);
         }
         //Private methods
         Egg.prototype._checkBound = function (value) {
             //check that the top of the egg has reached outside of the screen
             if (this.y >= value) {
-                this._reset(-this._height);
+                this._reset(-this._topBounds);
             }
         };
         Egg.prototype._reset = function (value) {
             //reset the ocean offscreen
+            var leftBounds;
+            var rightBounds;
             this.y = value;
+            this.x = Math.floor(Math.random() * this._rightBounds) + this._leftBounds;
         };
         Egg.prototype.update = function () {
             //scroll the ocean 5px per frame
             this.y += this._speed.y;
-            this._checkBound(config.Screen.HEIGHT + this._height);
+            this._checkBound(this._bottomBounds);
         };
         return Egg;
     }(objects.GameObject));

@@ -9,13 +9,13 @@ module objects{
             super("egg");
             
             this._speed.y=5;//5 pixel per pixel
-            this._reset(-this._height);
+            this._reset(this._topBounds);
         }
         //Private methods
         protected _checkBound(value:number):void{
             //check that the top of the egg has reached outside of the screen
             if(this.y>=value){
-                this._reset(-this._height);
+                this._reset(-this._topBounds);
             }
         }
         protected _reset(value:number):void{
@@ -24,14 +24,14 @@ module objects{
             var rightBounds:number;
             
             this.y=value;
-            this.x - Math.random()* 
+            this.x =Math.floor( Math.random()* this._rightBounds)+ this._leftBounds;
         }
         
         
         public update():void{
             //scroll the ocean 5px per frame
             this.y+=this._speed.y;
-            this._checkBound(config.Screen.HEIGHT+ this._height);
+            this._checkBound(this._bottomBounds);
         }
     }
 }

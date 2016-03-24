@@ -5,6 +5,10 @@ module objects{
         protected _speed:createjs.Point;
         protected _width:number;
         protected _height:number;
+        protected _leftBounds: number;
+        protected _rightBounds:number;
+        protected _topBounds:number;
+        protected _bottomBounds:number;
         
         //constructor
         constructor(bitmapString:string){
@@ -13,6 +17,10 @@ module objects{
            this._speed= new createjs.Point(0,0);
             this._width= this.getBounds().width;
             this._height= this.getBounds().height;
+            this._topBounds= this._height;
+            this._bottomBounds= config.Screen.HEIGHT + this._height;
+            this._leftBounds= 0;
+            this._rightBounds = config.Screen.WIDTH - this._width;
         }
         //Private methods
         protected _checkBound(value:number):void{
