@@ -15,6 +15,9 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
+            //set monster 
+            this._monsterCount = 2;
+            this._monsters = new Array();
             //add grass to the scene
             this._grass = new objects.Grass();
             this.addChild(this._grass);
@@ -22,8 +25,10 @@ var scenes;
             this._egg = new objects.Egg();
             this.addChild(this._egg);
             //add the monster to the scene
-            this._monster = new objects.Monster();
-            this.addChild(this._monster);
+            for (var monster = 0; monster < this._monsterCount; monster++) {
+                this._monsters[monster] = new objects.Monster();
+                this.addChild(this._monsters[monster]);
+            }
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -31,7 +36,9 @@ var scenes;
         Play.prototype.update = function () {
             this._grass.update();
             this._egg.update();
-            this._monster.update();
+            for (var monster in this._monsters) {
+                this._monsters[monster].update();
+            }
         };
         return Play;
     }(objects.Scene));
