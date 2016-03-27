@@ -22,6 +22,7 @@ var assetData = [
     { id: "grass", src: "../../Assets/images/grass.png" },
     { id: "egg", src: "../../Assets/images/egg.png" },
     { id: "monster", src: "../../Assets/images/monster.png" },
+    { id: "player", src: "../../Assets/images/fox.png" },
 ];
 function preload() {
     assets = new createjs.LoadQueue();

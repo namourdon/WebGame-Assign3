@@ -24,6 +24,9 @@ var scenes;
             //add the eggs to the scene
             this._egg = new objects.Egg();
             this.addChild(this._egg);
+            //add the player to the scene
+            this._player = new objects.PLayer();
+            this.addChild(this._player);
             //add the monster to the scene
             for (var monster = 0; monster < this._monsterCount; monster++) {
                 this._monsters[monster] = new objects.Monster();
@@ -36,6 +39,7 @@ var scenes;
         Play.prototype.update = function () {
             this._grass.update();
             this._egg.update();
+            this._player.update();
             for (var monster in this._monsters) {
                 this._monsters[monster].update();
             }
