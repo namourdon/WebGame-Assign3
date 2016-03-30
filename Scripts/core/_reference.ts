@@ -14,6 +14,8 @@
 /// <reference path="../objects/monster.ts"/>
 /// <reference path="../objects/player.ts"/>
 
+/// <reference path="../managers/collision.ts"/>
+
 /// <reference path="../scenes/end.ts" />
 /// <reference path="../scenes/play.ts" />
 /// <reference path="../scenes/menu.ts" />

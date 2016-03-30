@@ -13,6 +13,7 @@ var objects;
         function Monster() {
             _super.call(this, "monster");
             this._reset(this._topBounds);
+            this.name = "monster";
         }
         //Private methods
         Monster.prototype._checkBound = function (value) {

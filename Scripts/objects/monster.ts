@@ -10,6 +10,7 @@ module objects{
             
             
             this._reset(this._topBounds);
+            this.name="monster";
         }
         //Private methods
         protected _checkBound(value:number):void{

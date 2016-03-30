@@ -10,6 +10,7 @@ module objects{
             
             this._speed.y=5;//5 pixel per pixel
             this._reset(this._topBounds);
+            this.name="egg";
         }
         //Private methods
         protected _checkBound(value:number):void{

@@ -14,6 +14,7 @@ var objects;
             _super.call(this, "egg");
             this._speed.y = 5; //5 pixel per pixel
             this._reset(this._topBounds);
+            this.name = "egg";
         }
         //Private methods
         Egg.prototype._checkBound = function (value) {
